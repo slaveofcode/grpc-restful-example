@@ -118,4 +118,4 @@ $ curl -X DELETE http://127.0.0.1:3000/api/products/3
 ```
 
 ## LICENSE 
-MIT ([more](LICENSE.md))
+MIT ([more](LICENSE))
