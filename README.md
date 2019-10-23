@@ -2,7 +2,7 @@
 
 Example implementation of Client-Server comunication through Restful and gRPC on the internal microservices.
 
-Please take a note this is just an example project, for those who wants to learn gRPC on Node, further features you may modify on your own.
+Please take a note that this is just an example project, for those who wants to learn about gRPC on Node.
 
 ```
 
