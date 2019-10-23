@@ -32,7 +32,7 @@ Please take a note that this is just an example project, for those who wants to 
 
 ## Project Preparation
 1. Clone this project
-2. There are 3 subdirectory which `server` is a server of gRPC, `client` is a server of client which provide a restful service to the user and `protos` which holds the `.proto` file for product.
+2. There are 3 subdirectories; `server` is a server of gRPC; `client` is a server of client which provide a restful service to the user, and `protos` which holds the `.proto` file for product.
 3. Go to `server` directory and install dependencies via 
 
 > npm i
