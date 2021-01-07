@@ -20,7 +20,7 @@ The illustration below is about how this project behave, so you may get the idea
                     [Restful]                                              | |
 +-----------------+ HTTP Req    +----------------+ RPC Calls  +------------+-v+
 |                 +------+----->+                +------------>               |
-| External Client |      |      | Client Service |            |  gRPC Server  |
+| External Client |      |      | Client Service |            |   Server App  |
 |                 <------+------+                <------------+               |
 +-----------------+ HTTP Resp   +----------------+            +---------------+
                          |
@@ -33,29 +33,40 @@ The illustration below is about how this project behave, so you may get the idea
 ```
 
 ## Data Flow
-1. HTTP Request coming from the front-end or client via **CURL** or another RESTful client (Insomnia, Postman, etc)
-2. Client Service requesting data through Rpc to the Server App
-3. Server App then doing a DB query and returning the result back
-4. Client Service got the result and return back to the original front-end or client.
+
+1. HTTP Request coming from the front-end or client via **CURL** or another RESTful client (e.g. Insomnia, Postman, etc)
+
+2. **Client Service** requesting data through Rpc to the **Server App**
+
+3. **Server App** then doing a DB query and returning the result back
+
+4. **Client Service** got the result and return back to the original front-end or client.
 
 ## Project Preparation
+
 1. Clone this project
-2. There are 3 subdirectories; `server` is a server of gRPC; `client` is a server of client which provide a restful service to the user, and `protos` which holds the `.proto` file for product.
+
+2. There are 3 subdirectories; `server` is a server of gRPC; `client` is a server of client which provide a restful service to the user, and `protos`  holds the `.proto` file for *product*.
+
 3. Go to `server` directory and install dependencies via 
+
 ```
-npm i
+$ npm i
 ```
 
 4. Do the same step on the `client` directory
+
 5. Create a new Postgres database called `grpc_products` (you may configure the username / password of the DB later on `server/knexfile.js`)
-5. Running the migration from the server directory
+
+6. Running the migration from the server directory
 ```
-npm run migrate
+$ npm run migrate
 ```
 
-6. Also the run the seeds 
+7. Also the run the seeds 
+
 ```
-npm run seed
+$ npm run seed
 ```
 
 ## Run the gRPC server
@@ -70,7 +81,7 @@ go to `client` directory and run `npm start`. You should see a message like this
 > Server run at 3000
 ```
 
-## Test via Curl
+## Testing RESTful request via CURL
 ### List Products
 ```
 $ curl http://127.0.0.1:3000/api/products 
