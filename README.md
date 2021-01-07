@@ -2,7 +2,8 @@
 
 Example implementation of gRPC bwtween the internal microservices communications. The original request from the front-end is still using a Restful.
 
-*Please take a note that this is just an example project, for those who wants to learn about gRPC on Node.
+**Note:**
+*This is just an example project, for those who wants to learn about gRPC on NodeJs.*
 
 The illustration below is about how this project behave, so you may get the idea about how it's work under the hood.
 ```
