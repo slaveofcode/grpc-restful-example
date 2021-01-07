@@ -1,4 +1,4 @@
-# gRPC Restful Client-Server
+# gRPC Client-Server Example with RESTful for the Front-end
 
 Example implementation of gRPC bwtween the internal microservices communications. The original request from the front-end is still using a Restful.
 
