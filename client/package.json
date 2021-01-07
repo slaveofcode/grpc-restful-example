@@ -2,9 +2,9 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "GRPC_VERBOSITY=debug GRPC_TRACE=api,http,tcp node app.js"
   },
   "keywords": [],
   "author": "",

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "knex migrate:latest",
-    "seed": "knex seed:run"
+    "seed": "knex seed:run",
+    "start": "GRPC_VERBOSITY=debug GRPC_TRACE=api,http,tcp node index.js"
   },
   "keywords": [],
   "author": "",

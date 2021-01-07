@@ -1,9 +1,10 @@
 # gRPC Restful Client-Server
 
-Example implementation of Client-Server comunication through Restful and gRPC on the internal microservices.
+Example implementation of gRPC bwtween the internal microservices communications. The original request from the front-end is still using a Restful.
 
-Please take a note that this is just an example project, for those who wants to learn about gRPC on Node.
+*Please take a note that this is just an example project, for those who wants to learn about gRPC on Node.
 
+The illustration below is about how this project behave, so you may get the idea about how it's work under the hood.
 ```
 
                                                +----------------------+
@@ -30,6 +31,12 @@ Please take a note that this is just an example project, for those who wants to 
 
 ```
 
+## Data Flow
+1. HTTP Request coming from the front-end or client via **CURL** or another RESTful client (Insomnia, Postman, etc)
+2. Client Service requesting data through Rpc to the Server App
+3. Server App then doing a DB query and returning the result back
+4. Client Service got the result and return back to the original front-end or client.
+
 ## Project Preparation
 1. Clone this project
 2. There are 3 subdirectories; `server` is a server of gRPC; `client` is a server of client which provide a restful service to the user, and `protos` which holds the `.proto` file for product.
@@ -38,26 +45,26 @@ Please take a note that this is just an example project, for those who wants to 
 npm i
 ```
 
-4. Do the same on the `client` directory
-5. Create a new Postgres database called `grpc_products` (you may configure the username / password of the DB later on `knexfile.js`)
-5. Running the migration from the root directory by running
+4. Do the same step on the `client` directory
+5. Create a new Postgres database called `grpc_products` (you may configure the username / password of the DB later on `server/knexfile.js`)
+5. Running the migration from the server directory
 ```
-./node_modules/.bin/knex migrate:latest
+npm run migrate
 ```
 
-6. Running the seed 
+6. Also the run the seeds 
 ```
-./node_modules/.bin/knex seed:run
+npm run seed
 ```
 
 ## Run the gRPC server
-Go to `server` directory and run `node index`. If everything Ok you will see a message like
+Go to `server` directory and run `npm start`. If everything Ok you will see a message like
 ```
 > gRPC server running at http://127.0.0.1:1831
 
 ```
 ## Run the Restful server (Client of gRPC)
-go to `client` directory and run `node app.js`. You should see a message like this
+go to `client` directory and run `npm start`. You should see a message like this
 ```
 > Server run at 3000
 ```
